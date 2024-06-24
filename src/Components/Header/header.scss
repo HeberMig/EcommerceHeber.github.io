@@ -1,0 +1,253 @@
+// $menu-color: #2c3e50; // Color principal para el texto del menú
+// $active-color: #e74c3c; // Color para el borde activo y hover
+// // $background-color: #ecf0f1; // Color de fondo del header
+// $background-color:#ffe600;
+// $logo-color: #3498db; // Color del logo
+// $search-bg-color: #ffffff; // Color de fondo del buscador
+// $search-border-color: #bdc3c7; // Color del borde del buscador
+
+// // MIXINs para reutilizar estilos
+// @mixin header-link {
+//   color: $menu-color;
+//   text-decoration: none;
+//   letter-spacing: 1px;
+//   transition: all 0.3s ease;
+// }
+
+// @mixin header-border($size: 2px) {
+//   border-bottom: solid $size $active-color;
+// }
+
+// // APLICANDO BEM EN SCSS
+// .header {
+//   background-color: $background-color;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   padding: 15px 30px;
+//   box-shadow: 0 4px 8px rgba(83, 49, 49, 0.1);
+
+//   &__logo {
+//     @include header-link;
+//     font-size: 2rem;
+//     font-weight: bold;
+//     color: $logo-color;
+//     transition: transform 0.3s ease;
+//   }
+//   &__logo:hover {
+//     @include header-link;
+//     transform: scale(1.2);
+//   }
+
+//   &__categoria {
+//     display: flex;
+//     align-content: center;
+//     margin-left: 10px;
+   
+    
+
+//   }
+
+
+//   &__search-bar {
+//     background-color: #ffffff;
+//     padding: 10px 60px 10px 15px;
+//     border: 1px solid #ccc;
+//     border-radius: 8px;
+//     height: 40px;
+//     width: 300%; /* Ancho del 100% para adaptarse al contenedor */
+//     max-width: 300px; /* Ancho máximo para evitar que se extienda demasiado en pantallas grandes */
+//     // font-size: 0.9rem;
+//     font-size: 13px;
+//     color: #333;
+//     outline: none;
+//     transition: all 0.3s ease;
+
+//     &:focus {
+//       border-color: #0a1520;
+//       box-shadow: 0 0 8px rgba(0, 123, 255, 0.6);
+//     }
+
+//     @media (max-width: 768px) {
+//       max-width: 200px; /* Ancho máximo ajustado para pantallas más pequeñas */
+//     }
+//   }
+
+//   &__nav-list {
+//     display: flex;
+//     list-style: none;
+//     column-gap: 20px;
+//     flex-wrap: wrap;
+//     margin: 0;
+//     padding: 0;
+
+//     @media (max-width: 768px) {
+//       justify-content: center; // Centrar los elementos en pantallas pequeñas
+//     }
+//   }
+
+//   &__list-item {
+//     display: flex;
+//     align-items: center;
+//   }
+
+//   &__item-link {
+//     @include header-link;
+
+//     &--is-active {
+//       @include header-border($size: 3px);
+//       color: $active-color;
+//     }
+
+//     &:hover {
+//       @include header-border;
+//       color: $active-color;
+//     }
+
+//     @media (max-width: 768px) {
+//       max-width: 300px; /* Ancho máximo ajustado para pantallas más pequeñas */
+//     }
+//   }
+// }
+
+// Definición de variables y mixins
+
+$menu-color: #2c3e50;
+$active-color: #e74c3c;
+$background-color: #ffe600;
+$logo-color: #ffe600;
+
+// Mixin para enlaces del header
+@mixin header-link {
+  color: $menu-color;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+// Mixin para bordes en estado activo
+@mixin header-border($size: 2px) {
+  border-bottom: solid $size $active-color;
+}
+
+// Estilos principales del header
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: $background-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  // margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(83, 49, 49, 0.1);
+
+  // Logo
+  &__logo {
+    @include header-link;
+    font-size: 2rem;
+    font-weight: bold;
+    color: $logo-color;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+  &__carrito{
+    @include header-link;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: $logo-color;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+    
+    // .header__list-item {
+    //   text-decoration: none; /* Quita el subrayado del enlace */
+    //   color: #333; /* Color del texto */
+    //   font-size: 18px; /* Tamaño de fuente */
+    //   display: flex; /* Flexbox para alinear ícono verticalmente */
+    //   align-items: center; /* Alinear verticalmente */
+    // }
+    
+    // .header__list-item:hover {
+    //   color: #007bff; /* Cambio de color al pasar el mouse */
+    // }
+    
+    // .header__list-item .carrito-icon {
+    //   margin-right: 5px; /* Espacio a la derecha del icono */
+    //   font-size: 24px; /* Tamaño del icono */
+    // }
+    
+  }
+
+
+  // Barra de búsqueda
+  &__search-bar {
+    background-color: #ffffff;
+    // padding: 10px 15px;
+    padding: 10px 60px 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    height: 40px;
+    // width: 100;
+    width: 588px;
+    // max-width: 300px;
+    max-width: auto;
+    font-size: 13px;
+    color: #333;
+    outline: none;
+    transition: all 0.3s ease;
+
+    &:focus {
+      border-color: #0a1520;
+      box-shadow: 0 0 8px rgba(0, 123, 255, 0.6);
+    }
+
+    @media (max-width: 768px) {
+      width: 100px;
+      // max-width: 200px;
+      max-width: auto;
+
+      
+    }
+  }
+
+  // Lista de navegación
+  &__nav-list {
+    display: flex;
+    list-style: none;
+    column-gap: 20px;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+
+    @media (max-width: 768px) {
+      justify-content: center;
+    }
+  }
+
+  // Ítems de la lista
+  &__list-item {
+    display: flex;
+    align-items: center;
+  }
+
+  // Enlace del ítem
+  &__item-link {
+    @include header-link;
+
+    &--is-active {
+      @include header-border($size: 3px);
+      color: $active-color;
+    }
+
+    &:hover {
+      @include header-border;
+      color: $active-color;
+    }
+  }
+}

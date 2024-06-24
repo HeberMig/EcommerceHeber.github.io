@@ -1,0 +1,38 @@
+/* .card-img-top {
+    object-fit: cover; 
+    height: 400px; 
+    width: 100%; 
+    object-position: center;
+  }
+   */
+
+   /* .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background-color: rgb(104, 31, 31);
+    padding: 20px;
+    border-radius: 5px;
+  } */
+  
+  /* Agrega estilos adicionales según sea necesario */
+  
+  /* card.css */
+.card {
+  /* background-color: aqua; */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Agrega transiciones suaves */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Mueve la tarjeta hacia arriba al pasar el cursor */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Agrega sombra alrededor de la tarjeta */
+}
